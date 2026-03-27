@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Firdaus Taomlar Markazi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --gold:#C9A24A;
+  --gold2:#E8C97A;
+  --green-dark:#071A0A;
+  --green-mid:#0C2210;
+  --green-card:#0F2813;
+  --green-border:rgba(201,162,74,0.2);
+  --white:#FAF6EE;
+  --muted:rgba(250,246,238,0.48);
+  --r:14px;
+}
+html{scroll-behavior:smooth}
+body{
+  background:var(--green-dark);
+  color:var(--white);
+  font-family:'Montserrat',sans-serif;
+  font-weight:300;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:64px 28px 52px;
+  background:linear-gradient(175deg,#0E2914 0%,#071A0A 100%);
+  position:relative;overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:-80px;left:50%;transform:translateX(-50%);
+  width:420px;height:420px;border-radius:50%;
+  background:radial-gradient(circle,rgba(201,162,74,0.08) 0%,transparent 68%);
+  pointer-events:none;
+}
+.top-orn{
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:32px;
+  animation:fadeDown .6s ease both;
+}
+.top-orn-line{width:60px;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,74,0.5))}
+.top-orn-line.r{background:linear-gradient(90deg,rgba(201,162,74,0.5),transparent)}
+.top-orn-diamond{width:7px;height:7px;background:var(--gold);transform:rotate(45deg);margin:0 10px;box-shadow:0 0 8px rgba(201,162,74,0.4)}
+.monogram{
+  width:72px;height:72px;border-radius:50%;
+  border:1.5px solid var(--gold);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 24px;position:relative;
+  box-shadow:0 0 0 6px rgba(201,162,74,0.06),0 0 30px rgba(201,162,74,0.12);
+  animation:zoomIn .7s ease both;
+}
+.monogram::before{
+  content:'';position:absolute;inset:-5px;border-radius:50%;
+  border:1px dashed rgba(201,162,74,0.2);
+  animation:spin 25s linear infinite;
+}
+.monogram span{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:600;color:var(--gold);line-height:1}
+.brand{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(52px,14vw,72px);font-weight:700;
+  letter-spacing:.14em;color:var(--white);line-height:1;
+  animation:fadeDown .7s .1s ease both;
+}
+.brand-sub{
+  font-family:'Montserrat',sans-serif;font-size:11.5px;
+  letter-spacing:.35em;color:var(--gold);font-weight:500;
+  text-transform:uppercase;margin-top:10px;
+  animation:fadeDown .7s .18s ease both;
+}
+.c-orn{
+  display:flex;align-items:center;gap:12px;
+  margin:26px auto;max-width:220px;
+  animation:fadeDown .7s .22s ease both;
+}
+.c-orn-line{flex:1;height:1px;background:linear-gradient(90deg,transparent,rgba(201,162,74,0.4),transparent)}
+.c-orn-star{color:var(--gold);font-size:11px}
+.tagline{
+  font-size:10.5px;letter-spacing:.22em;
+  color:var(--muted);text-transform:uppercase;
+  animation:fadeDown .7s .26s ease both;
+}
+
+@keyframes zoomIn{from{opacity:0;transform:scale(.82)}to{opacity:1;transform:scale(1)}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-14px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@keyframes spin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+
+/* BUTTONS */
+.btns{
+  padding:30px 20px 34px;
+  display:flex;flex-direction:column;gap:12px;
+  max-width:400px;margin:0 auto;
+  animation:fadeUp .7s .3s ease both;
+}
+.btn-call{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:18px 28px;
+  background:linear-gradient(135deg,#A07828 0%,#E8C97A 45%,#A07828 100%);
+  color:#071A0A;
+  font-family:'Montserrat',sans-serif;font-size:13.5px;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  border-radius:50px;text-decoration:none;
+  box-shadow:0 4px 22px rgba(201,162,74,0.28);
+  transition:all .2s ease;-webkit-tap-highlight-color:transparent;
+  border:none;cursor:pointer;
+}
+.btn-call:active{transform:scale(.97)}
+.btn-map{
+  display:flex;align-items:center;justify-content:center;gap:12px;
+  padding:15px 28px;
+  background:rgba(201,162,74,0.05);color:var(--gold2);
+  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:500;
+  letter-spacing:.1em;text-transform:uppercase;
+  border-radius:50px;
+  border:1.5px solid rgba(201,162,74,0.32);
+  transition:all .2s ease;-webkit-tap-highlight-color:transparent;
+  cursor:pointer;text-decoration:none;
+}
+.btn-map:active{transform:scale(.97);background:rgba(201,162,74,0.1)}
+
+/* MENU */
+.menu-wrap{padding:0 14px 120px;max-width:480px;margin:0 auto}
+.menu-heading{
+  text-align:center;
+  font-family:'Cormorant Garamond',serif;
+  font-size:26px;font-weight:600;font-style:italic;
+  letter-spacing:.1em;color:var(--gold);margin-bottom:20px;
+}
+.cat{
+  background:var(--green-card);border:1px solid var(--green-border);
+  border-radius:var(--r);margin-bottom:10px;overflow:hidden;
+  box-shadow:0 2px 16px rgba(0,0,0,0.4);
+}
+.cat-head{
+  display:flex;align-items:center;gap:10px;padding:14px 16px;
+  background:var(--green-mid);cursor:pointer;user-select:none;
+  -webkit-tap-highlight-color:transparent;
+  border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.cat.open .cat-head{border-bottom-color:var(--green-border)}
+.cat-emoji{font-size:18px}
+.cat-name{
+  flex:1;font-family:'Cormorant Garamond',serif;
+  font-size:17px;font-weight:600;color:var(--white);letter-spacing:.04em;
+}
+.cat-chev{
+  width:22px;height:22px;border-radius:50%;
+  border:1px solid rgba(201,162,74,0.3);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold);font-size:9px;transition:transform .3s;flex-shrink:0;
+}
+.cat.open .cat-chev{transform:rotate(180deg)}
+.cat-body{display:none}
+.cat.open .cat-body{display:block}
+.row{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-bottom:1px solid rgba(201,162,74,0.07);
+}
+.row:last-child{border-bottom:none}
+.row-name{font-size:13.5px;color:var(--white);font-weight:400;flex:1;padding-right:10px;line-height:1.4}
+.row-price{font-size:13px;color:var(--gold2);font-weight:500;white-space:nowrap}
+.extras-row{background:rgba(201,162,74,0.05);border-top:1px solid rgba(201,162,74,0.1);padding:10px 16px}
+.extras-row p{font-size:12px;color:var(--muted);line-height:2}
+.extras-row em{color:var(--gold2);font-style:normal}
+
+/* FOOTER */
+footer{
+  background:var(--green-mid);border-top:1px solid var(--green-border);
+  text-align:center;padding:28px 24px 20px;margin-bottom:80px;
+}
+.foot-phone{
+  font-family:'Cormorant Garamond',serif;font-size:24px;color:var(--gold);
+  letter-spacing:.06em;display:block;text-decoration:none;margin-bottom:8px;
+}
+.foot-sep{color:var(--gold);font-size:13px;margin:10px 0 6px;display:block}
+.foot-label{font-size:10.5px;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+
+/* STICKY */
+.sticky{
+  position:fixed;bottom:16px;left:50%;transform:translateX(-50%);
+  z-index:999;width:calc(100% - 36px);max-width:400px;
+}
+.sticky a{
+  display:flex;align-items:center;justify-content:center;gap:10px;
+  width:100%;padding:17px;
+  background:linear-gradient(135deg,#A07828,#E8C97A,#A07828);
+  color:#071A0A;font-family:'Montserrat',sans-serif;
+  font-size:13.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  border-radius:50px;text-decoration:none;
+  box-shadow:0 8px 28px rgba(201,162,74,0.38),0 2px 8px rgba(0,0,0,0.5);
+  -webkit-tap-highlight-color:transparent;transition:transform .2s;
+}
+.sticky a:active{transform:scale(.97)}
+.dot{
+  width:8px;height:8px;border-radius:50%;background:#071A0A;
+  animation:blink 1.8s ease-in-out infinite;
+}
+@keyframes blink{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.3;transform:scale(.6)}}
+
+/* TOAST */
+.toast{
+  position:fixed;bottom:90px;left:50%;
+  transform:translateX(-50%) translateY(8px);
+  background:var(--green-mid);border:1px solid rgba(201,162,74,0.3);
+  color:var(--white);font-size:13px;padding:11px 22px;border-radius:40px;
+  opacity:0;transition:all .3s ease;pointer-events:none;white-space:nowrap;z-index:998;
+}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="top-orn">
+    <div class="top-orn-line"></div>
+    <div class="top-orn-diamond"></div>
+    <div class="top-orn-line r"></div>
+  </div>
+  <div class="monogram"><span>F</span></div>
+  <div class="brand">FIRDAUS</div>
+  <div class="brand-sub">Taomlar Markazi</div>
+  <div class="c-orn">
+    <div class="c-orn-line"></div>
+    <div class="c-orn-star">✦</div>
+    <div class="c-orn-line"></div>
+  </div>
+  <div class="tagline">BBQ &nbsp;·&nbsp; Shashlik &nbsp;·&nbsp; Somsa &nbsp;·&nbsp; Suyuq ovqatlar</div>
+</div>
+
+<div class="btns">
+  <!-- tel: havolasi Taplink / mobil brauzerda to'g'ri ishlaydi -->
+  <a href="tel:+998972150090" class="btn-call">📞 &nbsp;Qo'ng'iroq qilish</a>
+  <button class="btn-map" onclick="openMap()">📍 &nbsp;Manzilni ko'rish</button>
+</div>
+
+<div class="menu-wrap">
+  <div class="menu-heading">— Menyu —</div>
+
+  <div class="cat open">
+    <div class="cat-head" onclick="toggle(this)">
+      <span class="cat-emoji">🍖</span><span class="cat-name">BBQ</span><span class="cat-chev">▼</span>
+    </div>
+    <div class="cat-body">
+      <div class="row"><span class="row-name">Mol go'shti</span><span class="row-price">280 000 so'm/kg</span></div>
+      <div class="row"><span class="row-name">Qo'y go'shti</span><span class="row-price">320 000 so'm/kg</span></div>
+      <div class="row"><span class="row-name">Ot go'shti</span><span class="row-price">300 000 so'm/kg</span></div>
+      <div class="row"><span class="row-name">Mol tili</span><span class="row-price">240 000 so'm/kg</span></div>
+      <div class="row"><span class="row-name">Tovuq</span><span class="row-price">70 000 so'm/dona</span></div>
+    </div>
+  </div>
+
+  <div class="cat open">
+    <div class="cat-head" onclick="toggle(this)">
+      <span class="cat-emoji">🍲</span><span class="cat-name">Suyuq ovqatlar</span><span class="cat-chev">▼</span>
+    </div>
+    <div class="cat-body">
+      <div class="row"><span class="row-name">Sho'rva</span><span class="row-price">25 000 so'm</span></div>
+      <div class="row"><span class="row-name">Mastava</span><span class="row-price">25 000 so'm</span></div>
+      <div class="row"><span class="row-name">Vaju</span><span class="row-price">25 000 so'm</span></div>
+    </div>
+  </div>
+
+  <div class="cat open">
+    <div class="cat-head" onclick="toggle(this)">
+      <span class="cat-emoji">🍝</span><span class="cat-name">Quyuq ovqatlar</span><span class="cat-chev">▼</span>
+    </div>
+    <div class="cat-body">
+      <div class="row"><span class="row-name">Uyg'ur lag'mon</span><span class="row-price">35 000 so'm</span></div>
+      <div class="row"><span class="row-name">Manti</span><span class="row-price">10 000 so'm/dona</span></div>
+    </div>
+  </div>
+
+  <div class="cat open">
+    <div class="cat-head" onclick="toggle(this)">
+      <span class="cat-emoji">🥟</span><span class="cat-name">Somsa</span><span class="cat-chev">▼</span>
+    </div>
+    <div class="cat-body">
+      <div class="row"><span class="row-name">Katta somsa</span><span class="row-price">30 000 so'm</span></div>
+      <div class="row"><span class="row-name">Juftli somsa</span><span class="row-price">17 000 so'm</span></div>
+    </div>
+  </div>
+
+  <div class="cat open">
+    <div class="cat-head" onclick="toggle(this)">
+      <span class="cat-emoji">🍢</span><span class="cat-name">Shashliklar</span><span class="cat-chev">▼</span>
+    </div>
+    <div class="cat-body">
+      <div class="row"><span class="row-name">Qiyma shashlik</span><span class="row-price">17 000 so'm</span></div>
+      <div class="row"><span class="row-name">Mol go'shti</span><span class="row-price">25 000 so'm</span></div>
+      <div class="row"><span class="row-name">Mol viriska</span><span class="row-price">28 000 so'm</span></div>
+      <div class="row"><span class="row-name">Qo'y go'shti</span><span class="row-price">28 000 so'm</span></div>
+      <div class="row"><span class="row-name">Tovuq file</span><span class="row-price">17 000 so'm</span></div>
+      <div class="row"><span class="row-name">Tovuq qanot</span><span class="row-price">17 000 so'm</span></div>
+    </div>
+  </div>
+
+  <div class="cat open">
+    <div class="cat-head" onclick="toggle(this)">
+      <span class="cat-emoji">🥗</span><span class="cat-name">Salatlar</span><span class="cat-chev">▼</span>
+    </div>
+    <div class="cat-body">
+      <div class="row"><span class="row-name">Sveji salat</span><span class="row-price">10 000 so'm</span></div>
+      <div class="row"><span class="row-name">Suzma salat</span><span class="row-price">5 000 so'm</span></div>
+      <div class="extras-row">
+        <p><em>Sous</em> — bepul &nbsp;·&nbsp; <em>Non</em> — 5 000 so'm</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="tel:+998972150090" class="foot-phone">+998 97 215 00 90</a>
+  <span class="foot-sep">✦</span>
+  <div class="foot-label">Premium Halol Taomlar &nbsp;·&nbsp; Margilan</div>
+</footer>
+
+<div class="sticky">
+  <a href="tel:+998972150090">
+    <div class="dot"></div>📞 &nbsp;Qo'ng'iroq qilish
+  </a>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// Restoran koordinatalari - Margilan
+var REST_LAT = 40.429196;
+var REST_LNG = 71.699682;
+
+function toggle(el) {
+  el.parentElement.classList.toggle("open");
+}
+
+function showToast(msg) {
+  var t = document.getElementById("toast");
+  t.textContent = msg;
+  t.classList.add("show");
+  setTimeout(function() { t.classList.remove("show"); }, 3000);
+}
+
+function openMap() {
+  // Avval foydalanuvchi joylashuvini aniqla, keyin yo'l ko'rsat
+  if (navigator.geolocation) {
+    showToast("📍 Joylashuv aniqlanmoqda...");
+    navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        // Foydalanuvchidan restoranga yo'l
+        var url = "https://www.google.com/maps/dir/"
+          + pos.coords.latitude + "," + pos.coords.longitude
+          + "/" + REST_LAT + "," + REST_LNG;
+        window.open(url, "_blank");
+        showToast("Yo'l ko'rsatilmoqda ✅");
+      },
+      function() {
+        // Ruxsat bermasa — faqat restoran joylashuvini ko'rsat
+        var url = "https://www.google.com/maps/search/?api=1&query=" + REST_LAT + "," + REST_LNG;
+        window.open(url, "_blank");
+        showToast("📍 Restoran xaritada ochildi");
+      },
+      { timeout: 8000, enableHighAccuracy: true }
+    );
+  } else {
+    // Geolokatsiya yo'q bo'lsa — restoran joylashuvini ochadi
+    var url = "https://www.google.com/maps/search/?api=1&query=" + REST_LAT + "," + REST_LNG;
+    window.open(url, "_blank");
+  }
+}
+</script>
+</body>
+</html>
